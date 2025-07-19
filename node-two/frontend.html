@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .container {
+            max-width: 200px;
+            margin: auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        #input-id {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #input-name {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #input-id {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #input-name {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        #input-message {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        .btn-grp {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            flex: 1;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        #messages {
+            min-height: 50px;
+            padding: 10px;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="text" id="input-id" placeholder="Enter your ID...">
+        <input type="text" id="input-name" placeholder="Enter your name...">
+        <input type="text" id="input-message" placeholder="Enter your message...">
+        <div class="btn-grp">
+            <button onclick="postMessage()">Post</button>
+            <button onclick="getMessage()">Get</button>
+        </div>
+        <div id="messages"></div>
+    </div>
+    <script>
+        let messageArray = [];
+
+        async function postMessage() {
+            alert("Message is posted!");
+
+            const id = document.getElementById('input-id').value;
+            const name = document.getElementById('input-name').value;
+            const message = document.getElementById('input-message').value;
+
+            // Prepare the data to send
+            const data = JSON.stringify({
+                id: id,
+                name: name,
+                message: message
+            });
+
+            // Set up the fetch request
+            let headerBody = {
+                method: "POST",
+                body: data,
+                headers: {
+                    "content-type": "application/json",
+                }
+            };
+
+            const response = await fetch("http://localhost:3000/post-messages", headerBody);
+
+            document.getElementById("input-id").value = "";
+            document.getElementById("input-name").value = "";
+            document.getElementById("input-message").value = "";
+        }
+
+
+        async function getMessage() {
+            let headerBody = {
+                method: "GET",
+                headers: {
+                    "content-type": "application/json"
+                }
+            }
+            const response = await fetch("http://localhost:3000/get-messages", headerBody);
+            const data = await response.text();
+            console.log(data);
+            document.getElementById('messages').innerHTML += data;
+        }
+    </script>
+</body>
+
+</html>
+<!-- the value will not be stored -->
+
+
+
+
+<!-- 1 -->
+<!--  <script>
+    let messageArray = [];
+
+    function postMessage(){
+      let message = document.getElementById("input-message").value;
+      messageArray.push(message);
+      document.getElementById("input-message").value = "";
+    }
+
+    function getMessage(){
+      document.getElementById("messages").innerHTML = messageArray;
+    }
+  </script> -->
+
+
+
+
+
+
+<!-- 2. -->
+
+<!-- let messageArray = [];
+
+    async function postMessage() {
+      alert("mesage is posted!");
+      const data = JSON.stringify({ message: document.getElementById('input-message').value })
+      let headerBody = {
+        method: "POST", 
+        body:data, 
+        headers: {
+          "content-type": "application/json",
+        }
+      }
+      const response = await fetch("http://localhost:3000/post-messages",headerBody);
+      document.getElementById("input-message").value = "";
+    }
+
+    async function getMessage() {
+      let headerBody = {
+        method: "GET", 
+        headers: {
+          "content-type": "application/json"
+        }
+      }
+      const response = await fetch("http://localhost:3000/get-messages",headerBody);
+      const data = await response.text();
+      console.log(data);
+      document.getElementById('messages').innerHTML += data;
+    } -->
+
+
+
+
+
+<!-- 19july
+     let studentData = [];
+    async function getMessage(){
+      let string = "";
+      // Simulating a fetch call to get messages
+      let response = await fetch("http://localhost:4000/students");
+      if (!response.ok) {
+        alert("Error fetching data"); //Handle error
+        return;
+      }
+      const data = await response.json();
+      studentData = data; // store the fetched data in studentData array
+
+
+      for (let i = 0; i < studentData.length; i++) {
+        string += `Name: ${studentData[i].name}, Message: ${studentData[i].message}` + "<br>";
+      }
+      document.getElementById("messages").innerHTML = string;
+    }
+
+    async function postMessage(){
+      const nameMsg = {
+        name: document.getElementById("input-message").value,
+        message: document.getElementById("input-message").value
+      };
+      studentData.push(nameMsg);
+      alert("Message posted successfully!");
+      // value clear
+      document.getElementById("input-message").value = "";
+    } -->
