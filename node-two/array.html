@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fruit Array CRUD</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    #input-id {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+
+    #button-one {
+      background-color: green;
+    }
+
+    #button-two {
+      background-color: greenyellow;
+      color: black;
+    }
+
+    #button-three {
+      background-color: orange;
+    }
+
+    #button-four {
+      background-color: red;
+    }
+
+    #output-label {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      min-height: 50px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Fruit Manager</h2>
+  <input type="text" id="input-id" placeholder="Enter fruit name..." />
+
+  <button id="button-one" onclick="getFruits()">GET</button>
+  <button id="button-two" onclick="postFruit()">POST</button>
+  <button id="button-three" onclick="updateFruit()">UPDATE</button>
+  <button id="button-four" onclick="deleteFruit()">DELETE</button>
+
+  <div id="output-label">Fruits will be shown here...</div>
+
+  <script>
+    let fruitData = [];
+
+    function getFruits() {
+      document.getElementById("output-label").innerText = fruitData.length > 0
+        ? "Fruit List:\n" + fruitData.join("\n")
+        : "No fruits available.";
+    }
+
+    function postFruit() {
+      const fruit = document.getElementById("input-id").value.trim();
+      if (fruit) {
+        fruitData.push(fruit);
+        document.getElementById("input-id").value = "";
+        getFruits();
+      } else {
+        alert("Please enter a fruit name.");
+      }
+    }
+
+    function deleteFruit() {
+      const fruit = document.getElementById("input-id").value.trim();
+      if (fruit) {
+        const index = fruitData.indexOf(fruit);
+        if (index > -1) {
+          fruitData.splice(index, 1);
+          document.getElementById("input-id").value = "";
+          getFruits();
+        } else {
+          alert("Fruit not found.");
+        }
+      } else {
+        alert("Please enter a fruit name.");
+      }
+    }
+  </script>
+</body>
+</html>
