@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fruit Array CRUD</title>
   <style>
     body {
@@ -11,6 +12,13 @@
     }
 
     #input-id {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    #input-id-one {
       width: 100%;
       padding: 10px;
       margin-bottom: 10px;
@@ -57,6 +65,7 @@
 <body>
   <h2>Fruit Manager</h2>
   <input type="text" id="input-id" placeholder="Enter fruit name..." />
+  <input type="text" id="input-id-one" placeholder="Enter fruit price..." />
 
   <button id="button-one" onclick="getFruits()">GET</button>
   <button id="button-two" onclick="postFruit()">POST</button>
@@ -69,37 +78,92 @@
     let fruitData = [];
 
     function getFruits() {
-      document.getElementById("output-label").innerText = fruitData.length > 0
-        ? "Fruit List:\n" + fruitData.join("\n")
-        : "No fruits available.";
+      document.getElementById("output-label").innerHTML = " Available fruits:";
+      for (let i = 0; i < fruitData.length; i++) {
+        document.getElementById("output-label").innerHTML += `\n${fruitData[i].name} - $${fruitData[i].price}`;
+      }
+      if (fruitData.length === 0) {
+        document.getElementById("output-label").innerHTML = "No fruits available.";
+      } else {
+        document.getElementById("output-label").innerHTML += `\n${fruitData[i].name} - $${fruitData[i].price}`;
+      }
+      document.getElementById("input-id").value = "";
+      document.getElementById("input-id-one").value = "";
     }
 
+
     function postFruit() {
-      const fruit = document.getElementById("input-id").value.trim();
+      const fruit = {
+        name: document.getElementById("input-id").value,
+        price: document.getElementById("input-id-one").value,
+      }
+      if (fruit.name === "" || fruit.price === "") {
+        alert("Please enter both fruit name and price.");
+        return;
+      }
       if (fruit) {
         fruitData.push(fruit);
         document.getElementById("input-id").value = "";
-        getFruits();
+        document.getElementById("input-id-one").value = "";
       } else {
-        alert("Please enter a fruit name.");
+        alert("Please enter the fruit details.");
       }
+      getFruits();
     }
-
-    function deleteFruit() {
-      const fruit = document.getElementById("input-id").value.trim();
+    function updateFruit() {
+      const fruit = {
+        name: document.getElementById("input-id").value,
+        price: document.getElementById("input-id-one").value
+      };
       if (fruit) {
-        const index = fruitData.indexOf(fruit);
-        if (index > -1) {
-          fruitData.splice(index, 1);
+        let index = -1;
+        for (let i = 0; i < fruitData.length; i++) {
+          if (fruitData[i].name === fruit.name) {
+            index = i;
+            break;
+          }
+        }
+        if (index !== -1) {
+          fruitData[index].price = fruit.price;
           document.getElementById("input-id").value = "";
-          getFruits();
+          document.getElementById("input-id-one").value = "";
         } else {
           alert("Fruit not found.");
         }
       } else {
-        alert("Please enter a fruit name.");
+        alert("Please enter the fruit details.")
+      }
+      getFruits();
+
+    }
+    function deleteFruit() {
+      const fruit = {
+        name: document.getElementById("input-id").value,
+        price: document.getElementById("input-id-one").value
+      };
+
+      if (fruit) {
+        let index = -1;
+        for (let i = 0; i < fruitData.length; i++) {
+          if (fruitData[i].name === fruit.name && fruitData[i].price === fruit.price) {
+            index = i;
+            break;
+          }
+        }
+
+        if (index !== -1) {
+          fruitData.splice(index, 1);
+          document.getElementById("input-id").value = "";
+          document.getElementById("input-id-one").value = "";
+        } else {
+          alert("Fruit not found.");
+        }
+
+        getFruits();
       }
     }
+
   </script>
 </body>
+
 </html>
