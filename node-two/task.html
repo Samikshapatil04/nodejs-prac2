@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Test</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="number"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+    }
+
+    #input1 {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #0056b3;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<body>
+    <input type="text" id="input1" placeholder="Enter first number">
+    <!-- <input type="text" id="input2" placeholder="Enter second number"> -->
+    <button onclick="checkNumber()">CHECK</button>
+    <div id="output"></div>
+
+    <script>
+        function number() {
+            let num1 = document.getElementById('input1').value;
+            if (num1 > 0) {
+                document.getElementById("output").innerHTML = "The number is Positive";
+                console.log("The number is Positive");
+            } else if (num1 < 0) {
+                document.getElementById("output").innerHTML = "The number is Negative";
+                console
+            } else {
+                document.getElementById("output").innerHTML = "The number is Zero";
+                console.log("The number is Zero");
+            }
+        }
+
+        function studentAge() {
+            let age = document.getElementById("input1").value;
+            if (age >= 13 && age < 19) {
+                document.getElementById("output").innerHTML = "High School Student";
+                console.log("High School Student");
+            }
+        }
+
+        function personName() {
+            let name = document.getElementById("input1").value;
+            if (name.toUpperCase() === "JOHNY") {
+                document.getElementById("output").innerHTML = "Name is JOHNY";
+                console.log("Name is JHONY");
+            }
+        }
+
+        function leapYear() {
+            let year = document.getElementById("input1").value;
+            if (year % 4 === 0 && year % 100 !== 0) {
+                document.getElementById("output").innerHTML = "year is a Leap Year";
+                console.log("year is a Leap Year");
+            } else {
+                document.getElementById("output").innerHTML = "Year is not a Leap Year";
+                console.log("year is not a Leap Year");
+            }
+
+        }
+
+        function userName() {
+            let name = document.getElementById("input1").value;
+            if (name === "Admin" || name === "Superuser") {
+                document.getElementById("output").innerHTML = "Authenticated";
+                console.log("Authenticated");
+            } else {
+                document.getElementById("output").innerHTML = "Not Authenticated";
+                console.log("Not Authenticated");
+            }
+        }
+
+        function checkNumber() {
+            const num = parseInt(document.getElementById("input1").value);
+            number();
+            let output = document.getElementById("output").innerHTML;
+
+            if (num !== 0) {
+                if (num % 2 === 0) {
+                    output += " and Even";
+                    console.log("and Even");
+                } else {
+                    output += " and Odd";
+                    console.log("and Odd");
+                }
+
+                document.getElementById("output").innerHTML = output;
+            }
+        }
+        
+        function boolean(input) {
+            if (input === "true" || input === true) {
+                return "Yes";
+            } else if (input === "false" || input === false) {
+                return "No";
+            } else {
+                return "Null";
+            }
+        }
+
+        function booleanCheck() {
+            let a = document.getElementById("input1").value;
+            let result = boolean(a);
+            document.getElementById("output").innerHTML = result;
+            console.log(result);
+        }
+
+    </script>
+</body>
+
+</html>

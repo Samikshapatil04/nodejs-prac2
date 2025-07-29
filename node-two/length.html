@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<body>
+    <input type="text" id="input1" placeholder="">
+    <button onclick="practice()">Check Length</button>
+    <script>
+        function calculateLength() {
+            const str = document.getElementById('input1').value;
+            if (str === "" || str === str.toUpperCase()) {
+                alert("Please enter a valid string");
+                return;
+            }
+            else {
+                const updateStr = str.toUpperCase();
+                console.log(updateStr);
+                alert("Updated string is: " + updateStr);
+            }
+
+        }
+        // function practice() {
+        //     let x = 78;
+        //     if (x > 75 && x < 80){
+        //         console.log("Very Good");
+        //     }else if (x > 70 && x < 75){
+        //         console.log("Good");
+        //     }
+        // }
+
+        // startsWith & endsWith
+        // function practice(){
+        //     const str = "Yash";
+        //     const result = str.startsWith("Y");
+        //     if (result && str.includes("a")) {
+        //         console.log("The string starts with 'Y' and contains 'a'.");
+        //     } else {
+        //         console.log("The string does not meet the criteria.");
+        //     }
+        // }
+
+        // indexOf
+        // function practice(){
+        //     const str = "You are a great"
+        //     const result = str.indexOf("A");
+        //     console.log(result);
+        // }
+
+            // slice
+        // function practice(){
+        //     const str = "laptop";
+        //     result = str.slice(0, 1);
+        //     res = str.slice(3,4);
+        //     console.log(result,res);
+        // }
+
+        // split
+        // function practice(){
+        //     const str = "How are you";
+        //     const result = str.split(" ");
+        //     console.log(result);
+        // }
+
+        // replace
+        function practice(){
+            const str = "How are you?";
+            const result = str.replace("How", "What");
+            const a = str.replace("are", "is");
+            console.log(result);
+            console.log(a);
+        }
+    </script>
+</body>
+
+</html>
