@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 25px;
+        width: 500px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<body>
+    <input type="text" id="ageInput" placeholder="Enter your age">
+    <button onclick="engineer()">Check Eligibility</button>
+    <div id="output"></div>
+    <script>
+        // function eligibleToLogin() {
+        //     let age = null;
+        //     if (age < 18) {
+        //         console.log("You are not eligible to login.");
+        //     } else {
+        //         console.log("You are eligible to login.");
+        //     }
+        // }
+        // function eligibleToLogin() {
+        //     let name = "true";
+        //     if (name == "rahul") {
+        //         console.log("Welcome Rahul.");
+        //     } else {
+        //         console.log("Hello Rahul.");
+        //     }
+        // }
+        // function eligibleToLogin() {
+        //     let name = "true";
+        //     if (name == "rahul") {
+        //         console.log("Welcome Rahul.");
+        //     } else {
+        //         console.log("Hello Rahul.");
+        //     }
+        // }
+        // function eligibleToLogin() {
+        //     let num = document.getElementById("ageInput").value;
+        //     switch (num % 2) {
+        //         case 0:
+        //             document.getElementById("output").innerText = "The number is even.";
+        //             break;
+        //         default:
+        //             document.getElementById("output").innerText = "The number is odd.";
+        //             break;
+        //     }
+        // }
+
+        // function eligibleToLogin(){
+        //     let dept = "HR";
+        //     let exp = 3
+        //     switch(true){
+        //         case (dept == "IT" && exp >= 3):
+        //             document.getElementById("output").innerText = "Senior IT.";
+        //             break;
+        //         case (dept == "HR" && exp >= 5):
+        //             document.getElementById("output").innerText = "Senior HR.";
+        //             break;
+        //     }
+        // }
+
+        function engineer() {
+            let dept = "HR";
+            let exp = 9;
+            if (dept == "IT") {
+                if (exp >= 3) {
+                    document.getElementById("output").innerText = "Senior IT.";
+                }
+            }
+            else if (dept == "HR") {
+                if (exp >= 5) {
+                    document.getElementById("output").innerText = "Senior HR.";
+                }
+            }
+            else {
+                document.getElementById("output").innerText = "No match found.";
+            }
+        }
+    </script>
+</body>
+
+</html>
