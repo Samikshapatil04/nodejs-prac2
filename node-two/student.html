@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Function</title>
+</head>
+<body>
+    <script>
+        className = [
+            {
+                id: 1,
+                name: "Samiksha",
+                marks: 85,
+            },
+            {
+                id: 2,
+                name: "Achal",
+                marks: 90,
+            },
+            {
+                id: 3,
+                name: "Ayush",
+                marks: 78,
+            },
+            {
+                id: 4,
+                name: "Ratnesh",
+                marks: 88,
+            },
+            {
+                id: 5,
+                name: "Alekh",
+                marks: 92,
+            }
+        ]
+
+        // // find average of student marks from avove array using for loop
+        // let totalMarks = 0;
+        // for (let i = 0; i < className.length; i++) {
+        //     totalMarks += className[i].marks; 
+        // }
+        // let avgMarks = totalMarks / className.length;
+        // console.log("Average Marks: " + avgMarks);
+
+
+        // // activate loop 6 times and ask user to enter surname for each student and also show enter surname and name for each student
+        // for (let i = 0; i < className.length; i++) {
+        //     let surname = prompt("Enter surname for " + className[i].name + ":");
+        //     className[i].surname = surname;
+        //     // console.log("Hello " + className[i].name + " " + className[i].surname + "!");
+        //     alert("Hello " + className[i].name + " " + className[i].surname + "!");
+        // } 
+
+        // for (let i of className){
+        //     let userInput = prompt(`Enter ${i.name}'s surname:`);
+        //     alert("Hwllo" + i.name +  + userInput + "!");
+        // }
+
+        // print name from above array who has even id
+        // for (let i = 0; i < className.length; i++) {
+        //     if (className[i].id % 2 === 0) {
+        //         console.log(className[i].name);
+        //     }
+        // }
+
+        // add 20 internal marks 20 to each student marks and print it
+        // for (let i = 0; i < className.length; i++) {
+        //     className[i].marks += 20;
+        //     console.log(className[i].name + " new marks: " + className[i].marks);
+        // }
+
+        for (let i of className){
+            i.marks = i.marks + 20;
+        }
+        console.log(className); 
+    </script>
+</body>
+</html>                    

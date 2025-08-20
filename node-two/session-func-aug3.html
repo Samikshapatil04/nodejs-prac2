@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<body>
+    <input type="text" id="input1" placeholder="">
+    <button onclick="currentYear()">submit</button>
+    <div id="output"></div>
+    <script>
+        function welcomeMessage() {
+            let name = "javascript";
+            let letter = name.charAt(0)
+            let newLetter = letter.toUpperCase();
+            let str = name.slice(1, name.length);
+            let newName = newLetter + str;
+            // let newName = newLetter + str
+            console.log(newName);
+            if (newName == "javascript") {
+                alert("Please enter a valid string");
+                return;
+            } else {
+                alert("welcome " + newName);
+                return newName;
+            }
+
+        }
+
+        function currentYear() {
+            let a = welcomeMessage();
+            const date = new Date();
+            const year = date.getFullYear();
+            let message = `Welcome ${a} The year is ${year}`;
+            document.getElementById('output').innerText = message;
+            console.log(message);
+        }
+    </script>
+    <!--  // let currentYear = new Date().getFullYear();
+            // let message = `Welcome ${a} The year is ${currentYear}`;
+            // document.getElementById('output').innerText = message;
+            // console.log(message); -->
+</body>
+
+</html>

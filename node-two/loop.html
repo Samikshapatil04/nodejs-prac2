@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Practice Document</title>
+</head>
+<body>
+     <script>
+        // print the given string in reverse form then show its index , used for and if statement
+        function reverseString() {
+            const str = document.getElementById('input1').value;
+            if (str === "" || str === str.toUpperCase()) {
+                alert("Please enter a valid string");
+                return;
+            } else {
+                const reversedStr = str.split('').reverse().join('');
+                const index = str.indexOf(reversedStr);
+                document.getElementById('output').innerText = `Reversed String: ${reversedStr}\nIndex: ${index}`;
+            }
+        }
+     </script>
+</body>
+</html>

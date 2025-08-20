@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+    }
+</style>
+
+<body>
+    <input type="text" id="input1" placeholder="">
+    <button onclick="practice()">Check Length</button>
+    <div id="output"></div>
+    <script>
+        function calculateLength() {
+            const str = document.getElementById('input1').value;
+            if (str === "" || str === str.toUpperCase()) {
+                alert("Please enter a valid string");
+                return;
+            }
+            else {
+                const updateStr = str.toUpperCase();
+                console.log(updateStr);
+                alert("Updated string is: " + updateStr);
+            }
+
+        }
+        // function practice() {
+        //     let x = 78;
+        //     if (x > 75 && x < 80){
+        //         console.log("Very Good");
+        //     }else if (x > 70 && x < 75){
+        //         console.log("Good");
+        //     }
+        // }
+
+        // startsWith & endsWith
+        // function practice(){
+        //     const str = "Yash";
+        //     const result = str.startsWith("Y");
+        //     if (result && str.includes("a")) {
+        //         console.log("The string starts with 'Y' and contains 'a'.");
+        //     } else {
+        //         console.log("The string does not meet the criteria.");
+        //     }
+        // }
+
+        // indexOf
+        // function practice(){
+        //     const str = "You are a great"
+        //     const result = str.indexOf("A");
+        //     console.log(result);
+        // }
+
+        // slice
+        // function practice() {
+        //     const str = "I like apple it";
+        //     result = str.slice(-14, -9);
+        //     // res = str.slice(3,4);
+        //     console.log(result);
+        // }
+
+        // split
+        // function practice(){
+        //     const str = "How are you";
+        //     const result = str.split(" ");
+        //     console.log(result);
+        // }
+
+        // replace
+        // function practice(){
+        //     const str = "How are you?";
+        //     const result = str.replace("How", "What");
+        //     const a = str.replace("are", "is");
+        //     console.log(result);
+        //     console.log(a);
+        // }
+
+        // function practice(){
+        //     const str = "    yash";
+        //     const result = str.replace("    ", "");
+        //     console.log(result);
+        // }
+
+        // // substring
+        // function practice() {
+        //     const str = "I like apple it";
+        //     result = str.substring(2, 6);
+        //     console.log(result);
+        // }
+
+        //trim - it removes the space from both ends of a string
+        // function practice(){
+        //     const str = "    yash";
+        //     const result = str.trim();
+        //     // str = str.trimStart(); // removes space from start
+        //     // str = str.trimEnd(); // removes space from end
+        //     console.log(result);
+        // }
+
+        // charAt is used to show the character at a specific index
+        // function practice() {
+        //     const str = "Yash";
+        //     const result = str.charAt(2);
+        //     console.log(result);
+        // }
+
+        // repeat
+        // function practice() {
+        //     const str = "Yash";
+        //     const result = str.repeat(3);
+        //     console.log(result);
+        // }
+
+        // concatenate
+        // function practice() {
+        //     const str1 = "Yash";
+        //     const str2 = "Kumar";
+        //     // const result = str1.concat(str2);
+        //     result = str2.concat(str1);
+        //     console.log(result);
+        // }
+
+        // padStart
+        // function practice() {
+        //     const str = "Good Bye";
+        //     const result = str.padStart(13, "0");
+        //     console.log(result);
+        // }
+
+        // padEnd
+        // function practice() {
+        //     const str = "Good Bye";
+        //     const result = str.padEnd(13, "0");
+        //     console.log(result);
+        // }
+
+        // function practise() {
+        //     const str = "Good Bye";
+        //     const ans = str.padStart(10, "0")
+        //     console.log(ans);
+        //     document.getElementById("output").innerHTML = "Result: " + ans;
+        // }
+        // function practise() {
+        //  let num =10;
+        //   let a = Math.abs(num)
+        //     console.log(a);
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+        // round off
+        // function practice() {
+        //     let num = (-3.7);
+        //     let a = Math.ceil(num)
+        //      console.log(a);
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+        //     let a = parseInt(num)
+        //     let b = num - a
+        //     if (b < 0.5) {
+        //        document.getElementById("output").innerHTML = "Result: " + a;
+        //     } else {
+        //          document.getElementById("output").innerHTML = "Result: " + a+1;
+        //     }
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+
+        // function practise() {
+        //     let num = -8.7;
+        //     let a = Math.ceil(num)
+        //     console.log(a);
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+        // floor -remove decimal value
+        //  function practice() {
+        //     let num = -3.8;
+        //     let a = Math.floor(num)
+        //     console.log(a);
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+        // trunc - remove decimal value
+        // function practice() {
+        //     let num = 16.4566;
+        //     let a = Math.trunc(num)
+        //     console.log(a);
+        //     document.getElementById("output").innerHTML = "Result: " + a;
+        // }
+
+        //  function practise() {
+        //    let b =  Math.max(1,2,3,4,5)
+        //      console.log(b);
+        //     document.getElementById("output").innerHTML = "Result: " + b;
+        //  }
+
+        // square root
+        // function practice() {
+        //     let b = Math.sqrt(1024)
+        //     console.log(b);
+        //     document.getElementById("output").innerHTML = "Result: " + b;
+        // }
+
+        // cube root 
+        // function practice() {
+        //     let b = Math.cbrt(1024)
+        //     console.log(b);
+        //     document.getElementById("output").innerHTML = "Result: " + b;
+        // }
+
+        // function practice(){
+        //     let num 
+        //     num = document.getElementById("input1").value;
+        //     if (num > 0) {
+        //         alert("You entered a positive number: " + num);
+        //     } else if (num < 0) {
+        //         alert("You entered a negative number: " + num);
+        //     } else if (num == 0) {
+        //         alert("You entered Neutral number: " + num);
+        //     } else {
+        //         alert("Please enter a valid number");
+        //     }
+        // }
+
+        // function practice() {
+        //     let num = 2
+        //     let power = 2
+        //     let result = 1
+        //     let i = 1
+        //     while (i <= power) {
+        //         result = result * num;
+        //         i++;
+        //     }
+        //     console.log(result);
+        // }
+
+        // Sign
+        //  function practice(){
+        //     let s
+        //     s = Math.sign(-5); // returns -1 for negative numbers, 1 for positive numbers, and 0 for zero
+        //     console.log(s);
+        // }
+
+        // power 
+        // function practice() {
+        //     let A
+        //     A = Math.pow(2, 4); // 2 raised to the power of 3
+        //     console.log(A);
+        // }
+
+
+        // random number
+        // function practice(){
+        //     let num
+        //     num = Math.random(num);
+        //     console.log(num);
+        // }
+
+        // function practice() {
+        //     let number = Math.random()
+        //     let NewNum = number * 100
+        //     let result = Math.floor(NewNum);
+        //     console.log(result);
+        // }
+
+        // function practice(){
+        //     const array = [1,2,3,4,5,6,7]
+        //     array.splice(4,0,55)
+        //     console.log(array);
+        //     document.getElementById("output").innerHTML = "Result: " + array;
+        // }
+
+        // function practice() {
+        //     let arr = [];
+        //     let evenCount = 0;
+        //     let oddCount = 0;
+        //     let repeatCount = 0;
+
+        //     // Take 10 numbers
+        //     for (let i = 0; i < 10; i++) {
+        //         let input = prompt("Enter a number:");
+        //         let num = parseInt(input, 10);
+        //         if (!isNaN(num)) {
+        //             arr.push(num);
+        //         } else {
+        //             alert("Please enter a valid number.");
+        //             i--; // repeat iteration
+        //         }
+        //     }
+
+        //     console.log("Array:", arr);
+
+        //     // Find Even and Odd Numbers
+        //     console.log("Even Numbers:");
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] % 2 === 0) {
+        //             console.log(arr[i]);
+        //             evenCount++;
+        //         }
+        //     }
+
+        //     console.log("Odd Numbers:");
+        //     for (let i = 0; i < arr.length; i++) {
+        //         if (arr[i] % 2 !== 0) {
+        //             console.log(arr[i]);
+        //             oddCount++;
+        //         }
+        //     }
+
+        //     // Find Repeated Numbers
+        //     console.log("Repeated Numbers:");
+        //     for (let i = 0; i < arr.length; i++) {
+        //         for (let j = i + 1; j < arr.length; j++) {
+        //             if (arr[i] === arr[j]) {
+        //                 console.log(arr[i]);
+        //                 repeatCount++;
+        //                 break; // avoid printing same repeated number multiple times
+        //             }
+        //         }
+        //     }
+
+        //     console.log("Total Even Count:", evenCount);
+        //     console.log("Total Odd Count:", oddCount);
+        //     console.log("Total Repeated Count:", repeatCount);
+        // }
+
+        // take an empty array, ask input 7 times to user, push each value in array, find out how many repeat each number
+        // function practice() {
+        //     let arr = [];
+
+        //     // Take 7 numbers
+        //     for (let i = 0; i < 7; i++) {
+        //         let input = prompt("Enter a number:");
+        //         arr.push(input);
+        //     }
+
+        //     console.log("Array:", arr);
+        //     for (let x of arr) {
+        //         let repeatCount = 0;
+        //         for (let j of arr){
+        //             if (x === j) {
+        //                 repeatCount++;
+        //             }
+        //         }
+        //     console.log("Repeated Numbers:", x + "=" + repeatCount);
+        //     }
+        // }
+
+        // // sorting
+        // function practice() {
+        //     const numbers = [5, 4, 3, 1, 2, 5];
+        //     for (let a = 0; a <= numbers.length - 1; a++) {
+        //         for (let i = 0; i <= numbers.length - 1; i++) {
+        //             let x = numbers[i];
+        //             let y = numbers[i + 1];
+        //             if (x > y) {
+        //                 let z = x;
+        //                 numbers[i] = y;
+        //                 numbers[i + 1] = z;
+        //             }
+        //         }
+        //     }
+        //     console.log("Sorted Array:", numbers);
+        //     numbers[0]
+
+        // }
+
+        // // find max numbers from array
+        function practice() {
+            const array = [4, 3, 5, 2, 1]
+            let x = array[0];
+            let y = array[0];
+            for (let i of array) {
+                if (i > x) {
+                    x = i;
+                }
+                if ( i < y){
+                    y = i;
+                }
+            }
+            console.log("Max Number:", x);
+            console.log("Min Number:", y);
+        } 
+            
+
+        
+
+
+    </script>
+</body>
+
+</html>

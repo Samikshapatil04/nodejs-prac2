@@ -1,0 +1,212 @@
+<!-- july 26 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        padding: 20px;
+        background-color: #f4f4f4;
+    }
+
+    h1,
+    h2 {
+        color: #333;
+    }
+
+    input[type="text"] {
+        width: 200px;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    button {
+        padding: 10px 15px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #218838;
+    }
+
+    #output {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f1f1f1;
+        border: 1px solid #ccc;
+        min-height: 50px;
+        white-space: pre-wrap;
+
+    }
+</style>
+
+<body>
+    <div>
+        <h1>Function</h1>
+        <p>Functions are reusable blocks of code that perform a specific task. They can take inputs, called parameters,
+            and return outputs.</p>
+        <h2>Types of Functions</h2>
+        <input type="text" id="input1" placeholder="Enter first number">
+        <input type="text" id="input2" placeholder="Enter second number">
+        <input type="text" id="input3" placeholder="Operation"></br></br>
+        <input type="text" id="input4" placeholder="Enter your Email"></br></br>
+        <!-- <button onclick="addition()">Addition</button>
+        <button onclick="subtraction()">Subtraction</button>
+        <button onclick="multiplication()">Multiplication</button>
+        <button onclick="division()">Division</button> -->
+        <button onclick="operation()">OPERATION</button>
+        <button onclick="eMail()">Check Mail</button>
+        <div id="output"></div>
+
+    </div>
+    <script>
+        function returnStudent(name, rollNo, age) {
+            let student = {
+                name: name,
+                rollNo: rollNo,
+                age: age,
+                institute: "Enjoy Programming",
+                city: "Katol",
+            };
+            return student;
+        }
+
+        function takeInput() {
+            // const one = document.getElementById("input1").value;
+            // const two = document.getElementById("input2").value;
+            const x = {
+                inputOne: document.getElementById("input1").value,
+                inputTwo: document.getElementById("input2").value,
+            };
+
+            if (x.inputOne === "" || x.inputTwo === "") {
+                alert("Please enter both numbers.");
+                return null;
+            }
+
+            if (isNaN(x.inputOne) || isNaN(x.inputTwo)) {
+                alert("Please enter valid numbers.");
+                return null;
+            }
+            return x;
+        }
+
+
+        function addition() {
+            const input = takeInput();
+            if (input) {
+                return parseInt(input.inputOne) + parseInt(input.inputTwo);
+
+                // document.getElementById("output").innerHTML = "Result: " + z;
+                // console.log("Addition Result: " + z);
+            }
+
+            // let checkReturn = returnStudent("John", 101, 20);
+            // // checkReturn.medicalLeave = 2;
+            // console.log(checkReturn);
+            // let checkReturn = document.getElementById("input2");
+            // console.log(checkReturn);
+            // checkReturn.hidden = true;
+
+        }
+        function subtraction() {
+            const input = takeInput();
+            if (input) {
+                return parseInt(input.inputOne) - parseInt(input.inputTwo);
+
+                // document.getElementById("output").innerHTML = "Result: " + z;
+                // console.log("Subtraction Result: " + z);
+            }
+        }
+
+        function multiplication() {
+            const input = takeInput();
+            if (input) {
+                return   parseInt(input.inputOne) * parseInt(input.inputTwo);
+
+                // document.getElementById("output").innerHTML = "Result: " + z;
+                // console.log("Multiplication Result: " + z);
+            }
+        }
+        function division() {
+            const input = takeInput();
+            if (input) {
+                return parseInt(input.inputOne) / parseInt(input.inputTwo);
+
+                // document.getElementById("output").innerHTML = "Result: " + z;
+                // console.log("Division Result: " + z);
+            }
+        }
+        function operation() {
+            let z;
+            if (document.getElementById("input3").value === "add") {
+                z = addition();
+            } else if (document.getElementById("input3").value === "sub") {
+                z = subtraction();
+            } else if (document.getElementById("input3").value === "mul") {
+                z = multiplication();
+            } else if (document.getElementById("input3").value === "div") {
+                z = division();
+            } else {
+                alert("Please enter a valid operation: add, sub, mul, div.");
+            }
+            document.getElementById("output").innerHTML = "Result: " + z;
+            console.log("Division Result: " + z);
+        }
+
+        // function eMail(){
+        //     const email = document.getElementById("input4").value;
+
+        //     if (email === "") {
+        //         alert("Please enter your email.");
+        //         return null;
+        //     }
+        //    if (email.includes("@") === false) {
+        //         alert("Please enter a valid email address.");
+        //         return null;
+        //     }
+        //     document.getElementById("output").innerHTML = "Email: " + email;
+        //     console.log("Email: " + email);
+        // }
+
+        function validateEmail(email) {
+            // if (email.includes("@") === false) {
+            if (email.endsWith("@gmail.com") === false) {
+                alert("Please enter a valid email address.");
+                return null;
+            }
+            return email;
+        }
+
+        function enterMail() {
+            const email = document.getElementById("input4").value;
+            if (email === "") {
+                alert("Please enter your email.");
+                return null;
+            }
+            return email;
+        }
+
+
+        function eMail() {
+            let a;
+            a = enterMail();
+            b = validateEmail(a);
+            document.getElementById("output").innerHTML = "Email: " + b;
+            console.log("Email: " + b);
+
+        }
+    </script>
+</body>
+
+</html>

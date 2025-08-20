@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        const kbc = [
+            {
+                que: 2 < 3,
+                option1: "False",
+                option2: "True",
+                ans: "True"
+            },
+            {
+                que: 2 + 2,
+                option1: 4,
+                option2: 22,
+                ans: 4
+            },
+        ];
+        for (let i of kbc) {
+            console.log(i.que);
+            console.log(i.option1);
+            console.log(i.option2);
+
+            let userans = prompt("Enter your answer: ");
+
+            if (userans == i.ans) {
+                console.log("Correct Answer");
+            } else {
+                console.log("Wrong Answer");
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
