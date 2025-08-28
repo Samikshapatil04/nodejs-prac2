@@ -408,26 +408,166 @@
         // }
 
         // // find max numbers from array
-        function practice() {
-            const array = [4, 3, 5, 2, 1]
-            let x = array[0];
-            let y = array[0];
-            for (let i of array) {
-                if (i > x) {
-                    x = i;
-                }
-                if ( i < y){
-                    y = i;
-                }
-            }
-            console.log("Max Number:", x);
-            console.log("Min Number:", y);
-        } 
-            
+        // function practice() {
+        //     const array = [4, 3, 5, 2, 1]
+        //     let x = array[0];
+        //     let y = array[0];
+        //     for (let i of array) {
+        //         if (i > x) {
+        //             x = i;
+        //         }
+        //         if ( i < y){
+        //             y = i;
+        //         }
+        //     }
+        //     console.log("Max Number:", x);
+        //     console.log("Min Number:", y);
+        // } 
+
+
+        // // find mean, median, mode, range from the array
+        // function practice(){
+        //     const array = [2,4,6,8,3,11,10]
+        //     let sum = 0;
+        //     for (let i of array){
+        //         sum = sum + i;
+        //     }
+        //     let mean = sum / array.length;
+        //     console.log("Mean:", mean);
+
+        //     // median
+        //     let median;
+        //     if (array.length % 2 === 0){
+        //         let a = array.length / 2;
+        //         let b = a - 1;
+        //         median = (array[a] + array[b]) / 2;
+        //         console.log("Median:",median);
+        //     } else {
+        //         let a = Math.floor(array.length / 2);
+        //         median = array[a];
+        //         console.log("Median:", median);
+        //     }
+
+        //     // mode
+        //     let mode;
+        //     let maxCount = 0;
+        //     for (let i of array){
+        //         let count = 0;
+        //         for (let j of array){
+        //             if (i === j){
+        //                 count++;
+        //             }
+        //         }
+        //         if (count > maxCount){
+        //             maxCount = count;
+        //             mode = i;
+        //         }
+        //     }
+        //     console.log("Mode:", mode);
+        //     // range
+        //     let min = array[0];
+        //     let max = array[0];
+        //     for (let i of array){
+        //         if (i < min){
+        //             min = i;
+        //         }
+        //         if (i > max){
+        //             max = i;
+        //         }
+        //     }
+        //     let range = max - min;
+        //     console.log("Range:", range);
+        // }
+
+
+        // // create array and idenify teh vowels and consoantes from thr given array and store them in separate array and also count there length
+        // const array = ["Hello World", "JavaScript"]
+        // function practice(){
+        //     let vowelsArray = [];
+        //     let consonantsArray = [];
+        //     let vowelsCount = 0;
+        //     let consonantsCount = 0;
+        //     for (let i=0; i<array.length; i++){
+        //         let str = array[i].toLowerCase();
+        //         for (let j=0; j<str.length; j++){
+        //             let char = str[j];
+        //             if ("aeiou".includes(char)){
+        //                 vowelsArray.push(char);
+        //                 vowelsCount++;
+        //             } else if (char >= 'a' && char <= 'z'){
+        //                 consonantsArray.push(char);
+        //                 consonantsCount++;
+        //             }
+        //         }
+        //     }
+        // }
+
+        // // Ayush Sir's Solution --- 1D job
+        // function practice(){
+        //     const array = ["Hello World", "JavaScript"]
+        //     let vowelsArray = [];
+        //     let consonantsArray = [];
+        //     for (let a of array){
+        //         let str = a;
+        //         let x = str.split("");
+        //         for (let i of x){
+        //             if(i=='e' || i=='a' || i=='o' || i=='a' || i=='i' || i=='u'){
+        //                 vowelsArray.push(i);
+        //             }else{
+        //                 consonantsArray.push(i);
+        //             }
+        //         }
+        //     }
+        //     let vowelsCount = vowelsArray.length;
+        //     let consonantsCount = consonantsArray.length;
+        //     console.log("Vowels:", vowelsArray);
+        //     console.log("Consonants:", consonantsArray);
+        //     console.log("Vowels Count:", vowelsCount);
+        //     console.log("Consonants Count:", consonantsCount);
+        // }
 
         
-
-
+    //     function practice() {
+    //         // object inside array
+    //     const studentData = [
+    //         {
+    //             id: 1,
+    //             name: "Samiksha",
+    //             marks: {
+    //                 m1: 87,
+    //                 m2: 89,
+    //                 m3: 90,
+    //                 m4: 78
+    //             }
+    //         }
+    //         , {
+    //             id: 2,
+    //             name: "Achal",
+    //             marks: {
+    //                 m1: 87,
+    //                 m2: 79,
+    //                 m3: 80,
+    //                 m4: 88
+    //             }
+    //         }, {
+    //             id: 3,
+    //             name: "Ayush",
+    //             marks: {
+    //                 m1: 97,
+    //                 m2: 69,
+    //                 m3: 70,
+    //                 m4: 98
+    //             }
+    //         }
+    //     ]
+    //     // for(let data of studentData){
+    //     //     data.name
+    //     //     data.marks.m3
+    //     //     console.log(data.name + " " + data.marks.m3);
+    //     // }
+    //     console.log(studentData[0]);
+    //     console.log(studentData[1]);
+    // }
     </script>
 </body>
 
