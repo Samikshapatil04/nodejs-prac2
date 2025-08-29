@@ -526,48 +526,115 @@
         //     console.log("Consonants Count:", consonantsCount);
         // }
 
-        
-    //     function practice() {
-    //         // object inside array
-    //     const studentData = [
-    //         {
-    //             id: 1,
-    //             name: "Samiksha",
-    //             marks: {
-    //                 m1: 87,
-    //                 m2: 89,
-    //                 m3: 90,
-    //                 m4: 78
-    //             }
-    //         }
-    //         , {
-    //             id: 2,
-    //             name: "Achal",
-    //             marks: {
-    //                 m1: 87,
-    //                 m2: 79,
-    //                 m3: 80,
-    //                 m4: 88
-    //             }
-    //         }, {
-    //             id: 3,
-    //             name: "Ayush",
-    //             marks: {
-    //                 m1: 97,
-    //                 m2: 69,
-    //                 m3: 70,
-    //                 m4: 98
-    //             }
-    //         }
-    //     ]
-    //     // for(let data of studentData){
-    //     //     data.name
-    //     //     data.marks.m3
-    //     //     console.log(data.name + " " + data.marks.m3);
-    //     // }
-    //     console.log(studentData[0]);
-    //     console.log(studentData[1]);
-    // }
+
+        //     function practice() {
+        //         // object inside array
+        //     const studentData = [
+        //         {
+        //             id: 1,
+        //             name: "Samiksha",
+        //             marks: {
+        //                 m1: 87,
+        //                 m2: 89,
+        //                 m3: 90,
+        //                 m4: 78
+        //             }
+        //         }
+        //         , {
+        //             id: 2,
+        //             name: "Achal",
+        //             marks: {
+        //                 m1: 87,
+        //                 m2: 79,
+        //                 m3: 80,
+        //                 m4: 88
+        //             }
+        //         }, {
+        //             id: 3,
+        //             name: "Ayush",
+        //             marks: {
+        //                 m1: 97,
+        //                 m2: 69,
+        //                 m3: 70,
+        //                 m4: 98
+        //             }
+        //         }
+        //     ]
+        //     // for(let data of studentData){
+        //     //     data.name
+        //     //     data.marks.m3
+        //     //     console.log(data.name + " " + data.marks.m3);
+        //     // }
+        //     console.log(studentData[0]);
+        //     console.log(studentData[1]);
+        // }
+
+
+        //     function practice() {
+        //     const students = []; // start with empty array
+        //     for (let i = 1; i <= 3; i++) {
+        //         let inputId = prompt("Enter Student Id:");
+        //         let inputName = prompt("Enter Student Name:");
+        //         let inputAge = prompt("Enter Student Age:");
+        //         let htmlMarks = prompt("Enter Student Marks in HTML:");
+        //         let cssMarks = prompt("Enter Student Marks in CSS:");
+        //         // push inside the loop
+        //         students.push({
+        //             id: inputId,
+        //             name: inputName,
+        //             age: inputAge,
+        //             marks: {
+        //                 html: htmlMarks,
+        //                 css: cssMarks
+        //             }
+        //         });
+        //     }
+        //     console.log(students); // print all students
+        // }
+
+        // find highestt marks in html among three student or given student and show name of student
+        function practice() {
+            const studentData = [
+                {
+                    id: 1,
+                    name: "Samiksha",
+                    age: 21,
+                    marks: {
+                        html: 98,
+                        css: 89
+                    }
+                }
+                , {
+                    id: 2,
+                    name: "Achal",
+                    age: 22,
+                    marks: {
+                        html: 87,
+                        css: 79
+                    }
+                }, {
+                    id: 3,
+                    name: "Ayush",
+                    age: 23,
+                    marks: {
+                        html: 97,
+                        css: 69
+                    }
+                }
+            ]
+            let maxMarks = 0;
+            let studentName = "";
+            for (let data of studentData) {
+                let marks = data.marks.html;
+                if (marks > maxMarks) {
+                    maxMarks = marks;
+                }
+                if (maxMarks == marks) {
+                    studentName = data.name;
+                }
+            }
+            console.log("Highest Marks in HTML is: " + maxMarks + " and Student Name is: " + studentName)
+        }
     </script>
 </body>
 
